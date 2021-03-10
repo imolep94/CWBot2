@@ -101,7 +101,7 @@ class main:
         trader = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662)) else False
         ofertas = True if ((me.id == 774368292) or (me.id == 716287267)) else False
         knight = True if ((me.id == 835010542) or (me.id == 953357637) or (mainIds ["crazzy"]) or (mainIds ["sir"]) or (mainIds ["ines"]) or (mainIds ["barbaro"]) or (mainIds ["mad"]) or (mainIds ["imanol"]) or (cousinIds ["pumpkin"]) or (cousinIds ["niko"])) else False
-        ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662)) else False
+        ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662) or (me.id == 775593292)) else False
         ambush =False if ranger else True 
         ordenes = True #False if ranger else True 
         tregua = True
@@ -151,7 +151,7 @@ class main:
                 target = 'none'  
             # app.send_message(ids["helper"], "El target actual es "+ target)
         def check_knigth_or_senti():
-            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
+            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
         #end added by Yoyi
 
         def cazar(mensaje):
