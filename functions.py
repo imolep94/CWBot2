@@ -95,7 +95,7 @@ class main:
         Blacksmith =True if (me.id == 645258806) else False
         en_quest=False
         gast_stmn=True
-        sentinela = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662)) else False
+        sentinela = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
         tactics = "/tactics_eagles"
         cod_trader = "09" if (me.id == 873541475) else ("55" if (me.id == 434324721) else "41")
         trader = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662)) else False
@@ -151,7 +151,7 @@ class main:
                 target = 'none'  
             # app.send_message(ids["helper"], "El target actual es "+ target)
         def check_knigth_or_senti():
-            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
+            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == 711652534) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
         #end added by Yoyi
 
         def cazar(mensaje):
