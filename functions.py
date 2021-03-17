@@ -98,7 +98,7 @@ class main:
         sentinela = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
         tactics = "/tactics_eagles"
         cod_trader = "09" if (me.id == 873541475) else ("55" if (me.id == 434324721) else "41")
-        trader = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662)) else False
+        trader = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
         ofertas = True if ((me.id == 774368292) or (me.id == 716287267)) else False
         knight = True if ((me.id == 835010542) or (me.id == 953357637) or (mainIds ["crazzy"]) or (mainIds ["sir"]) or (mainIds ["ines"]) or (mainIds ["barbaro"]) or (mainIds ["mad"]) or (mainIds ["imanol"]) or (cousinIds ["pumpkin"]) or (cousinIds ["niko"])) else False
         ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662) or (me.id == 775593292)) else False
