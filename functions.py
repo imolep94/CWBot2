@@ -79,6 +79,7 @@ class main:
         ids["RangerSquad"] = -1001227862489
         ids["spam_CB"] = -1001155668487
         ids["grup_mm"] = -1001274004593
+        ids["Suicide_Squad"] = -1001367858712 #Canal del escuadrón suicida
         try:
             ids.update(CW_ids)
         except:
@@ -89,19 +90,25 @@ class main:
         auto_quest=False
         caza = False
         quest="🍄Swamp" if ((me.id == 645258806) or (me.id == 740687108)) else ("🌲Forest" if  (me.id == 645258856 or me.id == 1347467384 or me.id == 835010162) else "🍄Swamp")
-        level=30
+        level=-1
         ff=True
-        collector = True if ((me.id == 802156685) or (me.id == 740687108) or (me.id == 955268100)or (me.id == 953357637)or (me.id == 925069789)) else False 
-        Blacksmith =True if (me.id == 645258806) else False
+        #collector = True if ((me.id == 802156685) or (me.id == 740687108) or (me.id == 955268100)or (me.id == 953357637)or (me.id == 925069789)) else False 
+        collector = False
+        #Blacksmith =True if (me.id == 645258806) else False
+        Blacksmith = False
+        alch = False
         en_quest=False
         gast_stmn=True
-        sentinela = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
+        #sentinela = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
+        sentinela = False
         tactics = "/tactics_eagles"
         cod_trader = "09" if (me.id == 873541475) else ("55" if (me.id == 434324721) else "41")
         trader = True if ((me.id == 609697213) or (me.id == 705724375) or (me.id == 434324721) or (me.id == 887923662) or (me.id == 711652534)) else False
         ofertas = True if ((me.id == 774368292) or (me.id == 716287267)) else False
-        knight = True if ((me.id == 835010542) or (me.id == 953357637) or (mainIds ["crazzy"]) or (mainIds ["sir"]) or (mainIds ["ines"]) or (mainIds ["barbaro"]) or (mainIds ["mad"]) or (mainIds ["imanol"]) or (cousinIds ["pumpkin"]) or (cousinIds ["niko"])) else False
-        ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662) or (me.id == 775593292)) else False
+        #knight = True if ((me.id == 835010542) or (me.id == 953357637) or (mainIds ["crazzy"]) or (mainIds ["sir"]) or (mainIds ["ines"]) or (mainIds ["barbaro"]) or (mainIds ["mad"]) or (mainIds ["imanol"]) or (cousinIds ["pumpkin"]) or (cousinIds ["niko"])) else False
+        #ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662) or (me.id == 775593292)) else False
+        knight = False
+        ranger = False
         ambush =False if ranger else True 
         ordenes = True #False if ranger else True 
         tregua = True
@@ -125,6 +132,7 @@ class main:
         # hunt_alredy_delayed = False
         alredy_defending = False
         target = 'none'
+        FirstTime = True
         #end added by Yoyi
         envio_rep = True if vago else False
         
@@ -152,6 +160,9 @@ class main:
             # app.send_message(ids["helper"], "El target actual es "+ target)
         def check_knigth_or_senti():
             return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == 711652534) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
+        def check_alredy_got_classes():
+            return (knight or sentinela or ranger or Blacksmith or collector or alch)
+        
         #end added by Yoyi
 
         def cazar(mensaje):
@@ -258,7 +269,7 @@ class main:
                 
         def selector_CW(message):
             #added by Yoyi for testing porpouse last four nonlocal variables
-            nonlocal ids, app, ordenes, auto_quest, caza, level, GC, GCmm, quest, ff, ambush, Blacksmith, en_quest, gast_stmn, sentinela, tactics, cod_trader, trader,ofertas, knight, collector, ranger, tregua, rango_max, dice, general, general2, orden_adelantada, defensores, apuntar, pet, warra, pasapasa, envio_rep, gopher, vago, log, vago_yoyi, ratio, hp_regen_rate, alredy_defending, target #,hunt_alredy_delayed
+            nonlocal ids, app, ordenes, auto_quest, caza, level, GC, GCmm, quest, ff, ambush, Blacksmith, alch, en_quest, gast_stmn, sentinela, tactics, cod_trader, trader,ofertas, knight, collector, ranger, tregua, rango_max, dice, general, general2, orden_adelantada, defensores, apuntar, pet, warra, pasapasa, envio_rep, gopher, vago, log, vago_yoyi, ratio, hp_regen_rate, alredy_defending, target #,hunt_alredy_delayed
             
             mensaje = message
             timer = randint(3, 7)
@@ -333,7 +344,10 @@ class main:
                         Blacksmith = False
                     
                     time.sleep(timer)
-                    app.send_message(ids["helper"], "Clase/es registrada: "+"\n"+("-Ranger"+"\n" if ranger else "")+("-Knight"+"\n" if knight else "")+("-Sentinel"+"\n" if sentinela else "")+("-Alchemist"+"\n" if alch else "")+("-Collector"+"\n" if collector else "")+("-Blacksmith"+"\n" if Blacksmith else ""))
+                    if(check_alredy_got_classes()):
+                        app.send_message(ids["helper"], "Clase/es registrada: "+"\n"+("-Ranger"+"\n" if ranger else "")+("-Knight"+"\n" if knight else "")+("-Sentinel"+"\n" if sentinela else "")+("-Alchemist"+"\n" if alch else "")+("-Collector"+"\n" if collector else "")+("-Blacksmith"+"\n" if Blacksmith else ""))
+                    else:
+                        app.send_message(ids["helper"], "No cogió class")    
 
                 elif 'Invite has been sent.' in mensaje.text and GC:
                     time.sleep(timer)
@@ -365,6 +379,10 @@ class main:
                     app.send_message(ids["CW"], '🗺Quests')
                 elif (re.search("🏅Level: ([0-9]+)", mensaje.text)) and ('Battle of the seven castles in' in mensaje.text):
                     level = int(re.findall("🏅Level: ([0-9]+)", mensaje.text)[0])
+                    if(level != -1):
+                        app.send_message(ids["helper"], "Level " + str(level) + " detectado.") 
+                    else:
+                        app.send_message(ids["helper"], "No cogió level")
                     hp = int(re.findall("Hp\:.([0-9]+)", mensaje.text)[0])
                     #added by Yoyi for testing porpouse
                     get_target(mensaje)
@@ -920,7 +938,9 @@ class main:
                             app.send_message(ids["CW"], "/ga_def "+cod_def)  """
    
 
-                
+            elif mensaje.chat.id==ids["Suicide_Squad"]:
+                mensaje.forward(ids["CW"])  
+            
             elif caza and mensaje.chat.id==ids["Caza"] and ("Prepare yourself to fight:" in  mensaje.text):
                 if vago:
                     rango_max = 15
@@ -1114,6 +1134,12 @@ class main:
 
                 elif "/command_list" == mensaje.text.lower():
                     app.send_message(ids["helper"], "Added by yoyi"+"\n" + "/caza_on\n" + "/caza_off\n" + "/set_ratio\n" + "/set_hpRegen\n" + "/vago_yoyi\n" + "/use_peace\n" + "/use_rage\n" + "/use_morph\n" + "/use_mana\n" + "/use_greed\n" + "/use_nature\n")
+                elif "No cogió class" == mensaje.text.lower():
+                    app.send_message(ids["CW"],"🏅Me")
+                    time.sleep(10)
+                elif "No cogió level" == mensaje.text.lower():
+                    app.send_message(ids["CW"],"/hero")
+                    time.sleep(10)
                 #end added by Yoyi
                 
                 elif (re.search("🏅Level: ([0-9]+)", mensaje.text)) and ('Battle of the seven castles in' in mensaje.text):
@@ -1181,10 +1207,10 @@ class main:
      
         
         chat_on()
-        if ids["CW"] != 1217879961: #No está en la basura..
-               app.send_message(ids["CW"],"🏅Me")
-               time.sleep(8)
-               app.send_message(ids["CW"],"/hero")
+        #if ids["CW"] != 1217879961: #No está en la basura..
+               #app.send_message(ids["CW"],"🏅Me")
+               #time.sleep(8)
+               #app.send_message(ids["CW"],"/hero")
         if ids["helper"] != 1217879961: #No está en la basura...
                app.send_message(ids["helper"],"Bot reiniciado...!!! 😜😘")                
                reporte()
@@ -1197,8 +1223,14 @@ class main:
         
         @app.on_message(Filters.chat(list(ids.values())) & Filters.text & ~Filters.scheduled)
         def cliente(client, message):
-            nonlocal api_session
+            nonlocal api_session, FirstTime
             if message.chat.id!=1217879961: #no es de Basuramia_bot
+                if(FirstTime):
+                    FirstTime = False
+                    app.send_message(ids["CW"],"🏅Me")
+                    time.sleep(10)
+                    app.send_message(ids["CW"],"/hero")
+                    time.sleep(10) 
                 #try:
                     #if BS: selector_BS(message)
                # except Exception as e:
