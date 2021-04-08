@@ -380,7 +380,7 @@ class main:
                 elif (re.search("🏅Level: ([0-9]+)", mensaje.text)) and ('Battle of the seven castles in' in mensaje.text):
                     level = int(re.findall("🏅Level: ([0-9]+)", mensaje.text)[0])
                     if(level != -1):
-                        app.send_message(ids["helper"], "Level " + str(level) + " detectado.") 
+                        pass 
                     else:
                         app.send_message(ids["helper"], "No cogió level")
                     hp = int(re.findall("Hp\:.([0-9]+)", mensaje.text)[0])
