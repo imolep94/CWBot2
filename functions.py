@@ -89,7 +89,7 @@ class main:
         GCmm = True if (me.id == 883822191) else False
         auto_quest=False
         caza = False
-        quest="🍄Swamp" if ((me.id == 645258806) or (me.id == 740687108)) else ("🌲Forest" if  (me.id == 645258856 or me.id == 1347467384 or me.id == 835010162) else "🍄Swamp")
+        quest="⛰️Valley" if (me.id == 835010162) else ("🌲Forest" if  (me.id == 645258856 or me.id == 1347467384) else "🍄Swamp")
         level=-1
         ff=True
         #collector = True if ((me.id == 802156685) or (me.id == 740687108) or (me.id == 955268100)or (me.id == 953357637)or (me.id == 925069789)) else False 
