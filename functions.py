@@ -160,7 +160,7 @@ class main:
                 target = 'none'  
             # app.send_message(ids["helper"], "El target actual es "+ target)
         def check_knigth_or_senti():
-            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == 711652534) or (me.id == mainIds ["auri"])(me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
+            return ((me.id == 835010542) or (me.id == 887923662) or (me.id == 775593292) or (me.id == 711652534) or (me.id == mainIds ["auri"]) or (me.id == mainIds ["crazzy"]) or (me.id == mainIds ["sir"]) or (me.id == mainIds ["ines"]) or (me.id == mainIds ["barbaro"]) or (me.id == mainIds ["mad"]) or (me.id == mainIds ["imanol"]) or (me.id == cousinIds ["pumpkin"]) or (me.id == mainIds ["zoro"]) or (me.id == mainIds ["rodrigo"]) or (me.id == mainIds ["brian"]) or (me.id == cousinIds ["niko"]))
         def check_alredy_got_classes():
             return (knight or sentinela or ranger or Blacksmith or collector or alch)
         
