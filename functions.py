@@ -82,6 +82,7 @@ class main:
         ids["spam_CB"] = -1001155668487
         ids["grup_mm"] = -1001274004593
         ids["Suicide_Squad"] = -1001367858712 #Canal del escuadrón suicida
+        ids["Javier"] = 876771760 #pv de Javier
         try:
             ids.update(CW_ids)
         except:
