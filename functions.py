@@ -286,8 +286,7 @@ class main:
             #added by Ines
             if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==876771760):
                 mensaje.forward(ids["CW"])
-                time.sleep(10+timer)
-                mensaje.forward(ids["spam_CB"])
+                
             
             if (mensaje.chat.id==ids["CW"]) and (mensaje.from_user.id==ids["CW"]): #Game
                 if "Congratulations! You are still alive." in mensaje.text: #Para que cuando llegue de un ambush diga con /f_report cómo fue la batalla y con /whois quién ayudo 
@@ -318,7 +317,11 @@ class main:
                 elif re.search("an ambush\!", mensaje.text):
                     mensaje.forward(ids["spam_CB"])
                 elif 'You met some hostile creatures.' in mensaje.text:
-                    mensaje.forward(cousinIds["pumpkin"]) if (me.id == 876771760) else mensaje.forward(ids["spam_CB"])
+                    if (me.id == 876771760):
+                        mensaje.forward(cousinIds["pumpkin"])
+                        time.sleep(10+timer)
+                        mensaje.forward(ids["spam_CB"])
+                    else mensaje.forward(ids["spam_CB"])
                     time.sleep(10+timer)
                     mensaje.forward(ids["Caza"])
                     
