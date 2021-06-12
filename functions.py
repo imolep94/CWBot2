@@ -308,7 +308,7 @@ class main:
                     time.sleep(timer)
                     mensaje.reply('▶️Fast fight')
                 elif re.search("an ambush\!", mensaje.text):
-                    mensaje.forward(ids["spam_CB"]
+                    mensaje.forward(ids["spam_CB"])
                 elif 'You met some hostile creatures.' in mensaje.text:
                     mensaje.forward(ids["spam_CB"])
                     time.sleep(10+timer)
