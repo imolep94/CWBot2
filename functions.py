@@ -280,7 +280,14 @@ class main:
             tiempo_or = randint(5,600)
             timer_aq = randint(1, 60) 
             timer_rep = randint (1, 700)
-
+            
+            
+            #added by Ines
+            if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==876771760):
+                mensaje.forward(ids["CW"])
+                time.sleep(10+timer)
+                mensaje.forward(ids["spam_CB"])
+            
             if (mensaje.chat.id==ids["CW"]) and (mensaje.from_user.id==ids["CW"]): #Game
                 if "Congratulations! You are still alive." in mensaje.text: #Para que cuando llegue de un ambush diga con /f_report cómo fue la batalla y con /whois quién ayudo 
                     mensaje.click(0)
