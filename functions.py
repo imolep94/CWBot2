@@ -321,7 +321,8 @@ class main:
                         mensaje.forward(cousinIds["pumpkin"])
                         time.sleep(10+timer)
                         mensaje.forward(ids["spam_CB"])
-                    else mensaje.forward(ids["spam_CB"])
+                    else:
+                        mensaje.forward(ids["spam_CB"])
                     time.sleep(10+timer)
                     mensaje.forward(ids["Caza"])
                     
