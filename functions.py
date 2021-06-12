@@ -66,7 +66,6 @@ class main:
         """
         cousinIds ["pumpkin"] = 959027567
         cousinIds ["niko"] = 827072071
-        cousinIds ["javier"] = 876771760
 
 
         """
@@ -112,7 +111,7 @@ class main:
         #ranger = True if ((me.id == 774391292) or (me.id == 609697213) or (me.id == 434324721) or (me.id == 705724375) or (me.id == 887923662) or (me.id == 775593292)) else False
         knight = False
         ranger = False
-        ambush =False if (ranger or (me.id == 876771760)) else True 
+        ambush =False if ranger else True 
         ordenes = True #False if ranger else True 
         tregua = True
         rango_max = 6
