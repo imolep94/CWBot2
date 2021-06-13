@@ -326,7 +326,7 @@ class main:
                         mensaje.forward(ids["spam_CB"])
                     else:
                         mensaje.forward(ids["spam_CB"])
-                    time.sleep(10+timer)
+                    time.sleep(59+timer)
                     mensaje.forward(ids["Caza"])
                     
                 elif "Class info: /class" in mensaje.text:
