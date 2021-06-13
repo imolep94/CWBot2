@@ -138,6 +138,7 @@ class main:
         FirstTime = True
         #end added by Yoyi
         envio_rep = True if vago else False
+        hunt_count = 0
         
 
         import time
@@ -169,8 +170,9 @@ class main:
         #end added by Yoyi
 
         def cazar(mensaje):
-            nonlocal level, ids, rango_max
+            nonlocal level, ids, rango_max, hunt_count
             has_link = False
+            timer = randint(3, 7)
             if mensaje.edit_date: return None
             if re.search("lvl\.([0-9]+)", mensaje.text):
                 mob_info = int(re.findall("lvl\.([0-9]+)", mensaje.text)[0])
@@ -186,7 +188,7 @@ class main:
             
             if int(level-10)< mob_info < int(level+rango_max):
                 if re.search("an ambush\!", mensaje.text):
-                    if GC or int(level)>mob_info:
+                    if GC or int(level)>mob_info or me.id == mainIds ["yoyi"]:
                         if has_link:
                             app.send_message(ids["CW"], str(has_link))
                         else:
@@ -198,10 +200,20 @@ class main:
                         else:
                             mensaje.forward(ids["CW"])
                 else:
-                    if has_link:
-                        app.send_message(ids["CW"], str(has_link))
+                    if ((me.id == mainIds ["yoyi"]) and (hunt_count < 8)):
+                        hunt_count = hunt_count + 1
+                        app.send_message(ids["helper"], str(hunt_count))
+                        if has_link:
+                            app.send_message(ids["CW"], str(has_link))
+                        else:
+                            mensaje.forward(ids["CW"])
                     else:
-                        mensaje.forward(ids["CW"])
+                        time.sleep(timer)   
+                        if has_link:
+                            app.send_message(ids["CW"], str(has_link))
+                        else:
+                            mensaje.forward(ids["CW"])
+
 
         def programar_ataque(mensaje, timer:int=randint(3, 7)):
             nonlocal app, ids
