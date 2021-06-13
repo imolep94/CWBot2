@@ -138,7 +138,7 @@ class main:
         FirstTime = True
         #end added by Yoyi
         envio_rep = True if vago else False
-        hunt_count = 0
+        wait_time = 0
         
 
         import time
@@ -170,9 +170,8 @@ class main:
         #end added by Yoyi
 
         def cazar(mensaje):
-            nonlocal level, ids, rango_max, hunt_count
+            nonlocal level, ids, rango_max, wait_time
             has_link = False
-            timer = randint(3, 7)
             if mensaje.edit_date: return None
             if re.search("lvl\.([0-9]+)", mensaje.text):
                 mob_info = int(re.findall("lvl\.([0-9]+)", mensaje.text)[0])
@@ -200,19 +199,11 @@ class main:
                         else:
                             mensaje.forward(ids["CW"])
                 else:
-                    if ((me.id == mainIds ["yoyi"]) and (hunt_count < 8)):
-                        hunt_count = hunt_count + 1
-                        app.send_message(ids["helper"], str(hunt_count))
-                        if has_link:
-                            app.send_message(ids["CW"], str(has_link))
-                        else:
-                            mensaje.forward(ids["CW"])
+                    time.sleep(wait_time)
+                    if has_link:
+                        app.send_message(ids["CW"], str(has_link))
                     else:
-                        time.sleep(timer)   
-                        if has_link:
-                            app.send_message(ids["CW"], str(has_link))
-                        else:
-                            mensaje.forward(ids["CW"])
+                        mensaje.forward(ids["CW"])
 
 
         def programar_ataque(mensaje, timer:int=randint(3, 7)):
@@ -268,6 +259,7 @@ class main:
                  ("El loop de los dados se encuentra activado" if dice else "El loop de los dados se encuentra desactivado")+"\n"+
                  ("La diversión y el baño de tu mascota está en mis manos 😘"+"\n" if pet else "")+
                  ("Las funciones del GC se encuentran activadas" if GC else "Las funciones del GC se encuentran desactivadas ")+"\n"+
+                 ("El tiempo de espera para cazar es de " +str(wait_time)+" segundos")+"\n"+
                  ("/command_list"))
 
 
@@ -284,7 +276,7 @@ class main:
                 
         def selector_CW(message):
             #added by Yoyi for testing porpouse last four nonlocal variables
-            nonlocal ids, app, ordenes, auto_quest, caza, level, GC, GCmm, quest, ff, ambush, Blacksmith, alch, en_quest, gast_stmn, sentinela, tactics, cod_trader, trader,ofertas, knight, collector, ranger, tregua, rango_max, dice, general, general2, orden_adelantada, defensores, apuntar, pet, warra, pasapasa, envio_rep, gopher, vago, log, vago_yoyi, ratio, hp_regen_rate, alredy_defending, target #,hunt_alredy_delayed
+            nonlocal ids, app, ordenes, auto_quest, caza, level, GC, GCmm, quest, ff, ambush, Blacksmith, alch, en_quest, gast_stmn, sentinela, tactics, cod_trader, trader,ofertas, knight, collector, ranger, tregua, rango_max, dice, general, general2, orden_adelantada, defensores, apuntar, pet, warra, pasapasa, envio_rep, gopher, vago, log, vago_yoyi, ratio, hp_regen_rate, alredy_defending, target, wait_time #,hunt_alredy_delayed
             
             mensaje = message
             timer = randint(3, 7)
@@ -482,6 +474,9 @@ class main:
                     envio_rep = False
                     time.sleep(timer_rep)
                     mensaje.forward(ids["RangerSquad"])
+                
+                elif 'You are preparing for a fight' in mensaje.text:
+                    wait_time = wait_time + 1
               
               
             elif (mensaje.chat.id==ids["Auction"]) and ofertas:
@@ -1159,13 +1154,15 @@ class main:
                     time.sleep(randint(2, 6))
 
                 elif "/command_list" == mensaje.text.lower():
-                    app.send_message(ids["helper"], "Added by yoyi"+"\n" + "/caza_on\n" + "/caza_off\n" + "/set_ratio\n" + "/set_hpRegen\n" + "/vago_yoyi\n" + "/use_peace\n" + "/use_rage\n" + "/use_morph\n" + "/use_mana\n" + "/use_greed\n" + "/use_nature\n")
+                    app.send_message(ids["helper"], "Added by yoyi"+"\n" + "/caza_on\n" + "/caza_off\n" + "/set_ratio\n" + "/set_hpRegen\n" + "/vago_yoyi\n" + "/check_delay\n" + "/use_peace\n" + "/use_rage\n" + "/use_morph\n" + "/use_mana\n" + "/use_greed\n" + "/use_nature\n")
                 elif "No cogió class" == mensaje.text.lower():
                     app.send_message(ids["CW"],"🏅Me")
                     time.sleep(10)
                 elif "No cogió level" == mensaje.text.lower():
                     app.send_message(ids["CW"],"/hero")
                     time.sleep(10)
+                elif "/check_delay" == mensaje.text.lower():
+                    app.send_message(ids["helper"], "El tiempo de espera para cazar es de " +str(wait_time)+" segundos")
                 #end added by Yoyi
                 
                 elif (re.search("🏅Level: ([0-9]+)", mensaje.text)) and ('Battle of the seven castles in' in mensaje.text):
