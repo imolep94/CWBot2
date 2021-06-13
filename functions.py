@@ -170,7 +170,7 @@ class main:
         #end added by Yoyi
 
         def cazar(mensaje):
-            nonlocal level, ids, rango_max, wait_time
+            nonlocal level, ids, rango_max
             has_link = False
             if mensaje.edit_date: return None
             if re.search("lvl\.([0-9]+)", mensaje.text):
@@ -199,7 +199,6 @@ class main:
                         else:
                             mensaje.forward(ids["CW"])
                 else:
-                    time.sleep(wait_time)
                     if has_link:
                         app.send_message(ids["CW"], str(has_link))
                     else:
@@ -564,6 +563,7 @@ class main:
                             rango_max = 11
                             cazar(mensaje)
                         else:
+                            time.sleep(wait_time)
                             if vago:
                                 rango_max = 10
                                 cazar(mensaje)
