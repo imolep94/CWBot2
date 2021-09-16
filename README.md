@@ -4,11 +4,7 @@ El presente git contiene el codigo fuente utilizado para ayudar en CW
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Inesita94/CWBot2/tree/master)
 
 
-## Colaboradores
-<b>Principal:</b> [@Inesita11](https://t.me/Inesita11)
 
-
-Tester: [@Always_Pumpkin](https://t.me/Always_Pumpkin)
 ## Comandos
 
 ### Módulo CW
