@@ -83,6 +83,8 @@ class main:
         ids["grup_mm"] = -1001274004593
         ids["Suicide_Squad"] = -1001367858712 #Canal del escuadrón suicida
         ids["Javier"] = 876771760 #pv de Javier
+        ids["Fonti"] = 654995338 #pv de Fonti
+
         try:
             ids.update(CW_ids)
         except:
@@ -287,7 +289,7 @@ class main:
             
             
             #added by Ines
-            if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==876771760):
+            if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==654995338):
                 mensaje.forward(ids["CW"])
                 
             
