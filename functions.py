@@ -555,7 +555,7 @@ class main:
                         rango_max = 6
                         cazar(mensaje)
 
-                elif ("/g_withdraw" in mensaje.text) and warra: 
+                elif ("/g_withdraw" in mensaje.text) and GC: 
                     mensaje.forward(ids["CW"])
                     pasapasa = True
                     
