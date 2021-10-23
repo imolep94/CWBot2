@@ -322,7 +322,7 @@ class main:
                 elif re.search("an ambush\!", mensaje.text):
                     mensaje.forward(ids["spam_CB"])
                 elif 'You met some hostile creatures.' in mensaje.text:
-                    if (me.id == 876771760):
+                    if (me.id == 654995338):
                         mensaje.forward(cousinIds["pumpkin"])
                         time.sleep(10+timer)
                         mensaje.forward(ids["spam_CB"])
