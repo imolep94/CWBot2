@@ -464,7 +464,7 @@ class main:
                 elif 'won! - he takes' in mensaje.text and dice:
                     app.send_message(ids["CW"], '🎲Play some dice')
 
-                elif 'Recipient shall send to bot:' in mensaje.text and warra and pasapasa:
+                elif 'Recipient shall send to bot:' in mensaje.text and GC and pasapasa:
                     mensaje.forward(ids["spam_CB"])
                     pasapasa = False
                 elif 'Recipient shall send to bot:' in mensaje.text and GCmm and pasapasa:
