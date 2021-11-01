@@ -548,6 +548,7 @@ class main:
 
                 elif (caza) and ("Be careful" in  mensaje.text):
                     time.sleep(wait_time)
+                    wait_time = 0
                     if vago:
                         rango_max = 10
                         cazar(mensaje)
