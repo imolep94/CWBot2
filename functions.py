@@ -289,8 +289,8 @@ class main:
             
             
             #added by Ines
-            if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==654995338):
-                mensaje.forward(ids["CW"])
+            #if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==654995338):
+                #mensaje.forward(ids["CW"])
                 
             
             if (mensaje.chat.id==ids["CW"]) and (mensaje.from_user.id==ids["CW"]): #Game
@@ -323,7 +323,7 @@ class main:
                     mensaje.forward(ids["spam_CB"])
                 elif 'You met some hostile creatures.' in mensaje.text:
                     if (me.id == 654995338):
-                        mensaje.forward(cousinIds["pumpkin"])
+                        #mensaje.forward(cousinIds["pumpkin"])
                         time.sleep(10+timer)
                         mensaje.forward(ids["spam_CB"])
                     else:
