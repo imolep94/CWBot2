@@ -84,6 +84,7 @@ class main:
         ids["Suicide_Squad"] = -1001367858712 #Canal del escuadrón suicida
         ids["Javier"] = 876771760 #pv de Javier
         ids["Fonti"] = 654995338 #pv de Fonti
+        ids["caza_tnt"] = -1001156688513
 
         try:
             ids.update(CW_ids)
@@ -321,6 +322,7 @@ class main:
                     mensaje.reply('▶️Fast fight')
                 elif re.search("an ambush\!", mensaje.text):
                     mensaje.forward(ids["spam_CB"])
+                    mensaje.forward(ids["caza_tnt"])
                 elif 'You met some hostile creatures.' in mensaje.text:
                     if (me.id == 654995338):
                         #mensaje.forward(cousinIds["pumpkin"])
@@ -328,6 +330,7 @@ class main:
                         mensaje.forward(ids["spam_CB"])
                     else:
                         mensaje.forward(ids["spam_CB"])
+                        mensaje.forward(ids["caza_tnt"])
                     time.sleep(59+timer)
                     mensaje.forward(ids["Caza"])
                     
