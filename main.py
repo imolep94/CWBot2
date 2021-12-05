@@ -5,7 +5,7 @@ import logging
 import time
 #logging.basicConfig(level=logging.INFO)
 
-api_id = int(os.environ.get("APP_ID"))
+api_id = long(os.environ.get("APP_ID"))
 api_hash = str(os.environ.get("API_HASH"))
 api_session = str(os.environ.get("SESSION"))
 
