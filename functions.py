@@ -16,7 +16,7 @@ class main:
         try:
             from pyrogram import Filters                  
         except ImportError:
-            from pyrogram import filters    
+            from pyrogram import Filters    
         #from pyrogram.api import functions
         try:
             from pyrogram.api import functions
