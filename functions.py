@@ -7,8 +7,8 @@ class main:
         self.api_hash = api_hash
         self.api_session = api_session
 
-        # from pyrogram import Client, MessageHandler, Filters
-        from pyrogram import Client#, Filters, MessageHandler
+        from pyrogram import Client, MessageHandler, Filters
+        #from pyrogram import Client#, Filters, MessageHandler
         try:
             from pyrogram import MessageHandler                  
         except ImportError:
