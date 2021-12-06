@@ -14,7 +14,7 @@ class main:
         except ImportError:
             from pyrogram.handlers import MessageHandler
         try:
-            from pyrogram import filters                  
+            from pyrogram import Filters                  
         except ImportError:
             from pyrogram import filters    
         #from pyrogram.api import functions
