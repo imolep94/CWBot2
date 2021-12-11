@@ -331,6 +331,7 @@ class main:
                         mensaje.forward(ids["spam_CB"])
                     else:
                         mensaje.forward(ids["spam_CB"])
+                        time.sleep(timer)
                         mensaje.forward(ids["caza_tnt"])
                     time.sleep(59+timer)
                     mensaje.forward(ids["Caza"])
