@@ -631,6 +631,7 @@ class main:
                         #time.sleep(timer+450)
                         #app.send_message(ids["CW"], '⚽Play')  
 
+                       
         
                 elif (caza) and ("Be careful" in  mensaje.text):
                     if vago:
