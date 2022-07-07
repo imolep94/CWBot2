@@ -307,7 +307,7 @@ class main:
                         time.sleep(randint(3, 7)) 
                         app.send_message(ids["CW"], "🏅Me")
                     #end added by Yoyi
-                elif ('You were strolling around on your horse' in mensaje.text: # El más importante para que cuando llegue un foray de alguien más responda /go
+                elif ('You were strolling around on your horse' in mensaje.text): # El más importante para que cuando llegue un foray de alguien más responda /go
                     auto_quest=False
                     time.sleep(tiempo)
                     mensaje.click(0)
