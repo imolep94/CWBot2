@@ -295,6 +295,7 @@ class main:
                 #mensaje.forward(ids["CW"])
                 
             
+
             if (mensaje.chat.id==ids["CW"]) and (mensaje.from_user.id==ids["CW"]): #Game
                 if "Congratulations! You are still alive." in mensaje.text: #Para que cuando llegue de un ambush diga con /f_report cómo fue la batalla y con /whois quién ayudo 
                     mensaje.click(0)
