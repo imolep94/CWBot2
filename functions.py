@@ -96,7 +96,7 @@ class main:
 
         GC = True if (me.id == 959027567) else False
         GCmm = True if (me.id == 883822191) else False
-        auto_quest=False
+        auto_quest=True
         caza = False
         quest="⛰️Valley" if (me.id == 835010162) else ("🌲Forest" if  (me.id == 645258856 or me.id == 1347467384) else "🍄Swamp")
         level=-1
