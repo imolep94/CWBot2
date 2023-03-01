@@ -2,7 +2,6 @@ class main:
     def __init__(self, api_id, api_hash, api_session, CW_ids:dict={}):
         import logging
         log = logging.getLogger()
-        
 
         self.api_id = api_id
         self.api_hash = api_hash
@@ -24,8 +23,6 @@ class main:
         except ImportError:
             from pyrogram.raw import functions
         from numpy.random import randint
-       
-
 
         import re
         import time
@@ -33,6 +30,7 @@ class main:
         import os
         import random
         from pyrogram.errors import AuthKeyUnregistered, MessageIdInvalid, AuthKeyDuplicated
+
 
         app = Client(api_session, api_id, api_hash)
         try:
