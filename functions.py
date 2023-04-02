@@ -31,7 +31,6 @@ class main:
         import random
         from pyrogram.errors import AuthKeyUnregistered, MessageIdInvalid, AuthKeyDuplicated
 
-
         app = Client(api_session, api_id, api_hash)
         try:
             app.start()
@@ -67,7 +66,6 @@ class main:
         """
         cousinIds ["pumpkin"] = 959027567
         cousinIds ["niko"] = 827072071
-
 
         """
         CW CODE
@@ -143,7 +141,6 @@ class main:
         #end added by Yoyi
         envio_rep = True if vago else False
         wait_time = 0
-        
 
         import time
         #added by Yoyi for testing porpouse
@@ -289,13 +286,13 @@ class main:
             timer_aq = randint(1, 60) 
             timer_rep = randint (1, 700)
             
+
             
             #added by Ines
             #if (me.id == cousinIds["pumpkin"]) and (mensaje.chat.id==654995338):
                 #mensaje.forward(ids["CW"])
                 
             
-
             if (mensaje.chat.id==ids["CW"]) and (mensaje.from_user.id==ids["CW"]): #Game
                 if "Congratulations! You are still alive." in mensaje.text: #Para que cuando llegue de un ambush diga con /f_report cómo fue la batalla y con /whois quién ayudo 
                     mensaje.click(0)
